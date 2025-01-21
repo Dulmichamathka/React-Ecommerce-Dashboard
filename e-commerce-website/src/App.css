@@ -76,3 +76,23 @@ header button.rounded-circle svg {
   border-radius: 50%;
   padding: 2px;
 }
+
+/* --AvatarDetails-- */
+
+.myAcc .userInfo {
+  padding-left: 10px;
+}
+
+.myAcc .userInfo h4 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 0px;
+  color: #1c7877;
+}
+
+.myAcc .userInfo p {
+  margin-top: 0px;
+  font-size: 11px;
+  color: #767474;
+  opacity: 0.7;
+}

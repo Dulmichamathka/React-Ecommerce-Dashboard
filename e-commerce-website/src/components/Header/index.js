@@ -67,9 +67,9 @@ const Header = () => {
                   />
                 </div>
 
-                <div className="usetInfo">
+                <div className="userInfo">
                   <h4>Dulmi Chamathka</h4>
-                  <p></p>
+                  <p className="mb-0">dulmi@gmail.com</p>
                 </div>
               </div>
             </div>
