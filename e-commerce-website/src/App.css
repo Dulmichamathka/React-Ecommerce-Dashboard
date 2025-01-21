@@ -1,5 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&display=swap");
+* {
+  margin: 0px;
+  padding: 0px;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
+  background: #bfbfbf;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  background: #fff;
+}
+
+header .row {
+  margin: 0px !important;
+}
+
+header .logo {
+  text-decoration: none;
+}
+
+header .logo span {
+  margin-left: 5px;
+  color: #1c7877;
+  font-family: "Playwrite IN", serif;
+  font-weight: 600;
+}
+
+header button.rounded-circle {
+  min-width: 40px !important;
+  height: 40px !important;
+  background: #f0f5ff !important;
+  color: #292929;
+}
+
+header button.rounded-circle svg {
+  color: #292929;
+  font-size: 18px;
+}
+
+.searchbox {
+  width: 400px;
+  height: 45px;
+  background: #f0f5ff;
+  border-radius: 6px;
+}
+
+.searchbox input {
+  background: transparent;
+  border: 0px;
+  outline: none;
+  padding-left: 9px;
+  font-size: 14px;
+  color: #292929;
+}
+
+.searchbox input::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.6);
 }
