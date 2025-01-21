@@ -39,8 +39,13 @@ header button.rounded-circle {
 }
 
 header button.rounded-circle svg {
-  color: #292929;
+  color: #1c7877;
   font-size: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+header button.rounded-circle:hover svg {
+  color: #55b1af !important;
 }
 
 .searchbox {
@@ -67,6 +72,7 @@ header button.rounded-circle svg {
 
 .myAcc {
   cursor: pointer;
+  color: #31b1b0 !important;
 }
 
 .myAcc .userImg {
@@ -95,4 +101,11 @@ header button.rounded-circle svg {
   font-size: 11px;
   color: #767474;
   opacity: 0.7;
+
+  /*color: #096866;*/
+}
+
+#account-menu li {
+  font-size: 14px !important;
+  padding: 10px 15px !important;
 }
