@@ -4,6 +4,13 @@ import SearchBox from "../SearchBox";
 import Button from "@mui/material/Button";
 import { MdMenuOpen } from "react-icons/md";
 import { MdOutlineMenu } from "react-icons/md";
+import { MdOutlineLightMode } from "react-icons/md";
+import { MdDarkMode } from "react-icons/md";
+import { IoCartOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+import { FaRegBell } from "react-icons/fa";
+
+import Avatar from "@mui/material/Avatar";
 
 const Header = () => {
   return (
@@ -30,6 +37,41 @@ const Header = () => {
                 <MdMenuOpen />
               </Button>
               <SearchBox />
+            </div>
+
+            <div className="col-sm-7 d-flex align-items-center justify-content-end ">
+              <Button className="rounded-circle mr-3">
+                <MdOutlineLightMode />
+              </Button>
+              <Button className="rounded-circle mr-3">
+                <IoCartOutline />
+              </Button>
+              <Button className="rounded-circle mr-3">
+                <MdOutlineEmail />
+              </Button>
+              <Button className="rounded-circle mr-3">
+                <FaRegBell />
+              </Button>
+
+              <div className="myAcc d-flex align-items-center">
+                <div className="userImg">
+                  <Avatar
+                    src="/profile.jpg"
+                    sx={{
+                      width: 34,
+                      height: 34,
+                      position: "relative",
+                      bottom: "0.5px",
+                      right: "0.5px",
+                    }}
+                  />
+                </div>
+
+                <div className="usetInfo">
+                  <h4>Dulmi Chamathka</h4>
+                  <p></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
