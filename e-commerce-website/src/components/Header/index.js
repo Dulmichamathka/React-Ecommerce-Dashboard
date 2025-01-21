@@ -17,16 +17,19 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Tooltip from "@mui/material/Tooltip";
-import PersonAdd from "@mui/icons-material/PersonAdd";
-import Settings from "@mui/icons-material/Settings";
-import Logout from "@mui/icons-material/Logout";
 
 import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
+import { styled } from "@mui/material";
+
+const SmallAvatar = styled(Avatar)(({ theme }) => ({
+  width: 10,
+  height: 10,
+  padding: 3,
+
+  border: `1px solid ${theme.palette.background.paper}`,
+}));
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -38,6 +41,60 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const [isOpennotification, setIsOpennotification] = useState(false);
+  const openNotification = Boolean(isOpennotification);
+
+  const handleClickNotifications = (event) => {
+    setIsOpennotification(true);
+  };
+  const handleCloseNotifications = () => {
+    setIsOpennotification(false);
+  };
+
+  const notifications = [
+    {
+      id: 1,
+      userAvatar: "/profile.jpg",
+      smallAvatar: "/heartwhite.png",
+      Sbackground: "red",
+      message: " added to her favourite list Nirasha Madubashini",
+      time: " few seconds ago!",
+    },
+    {
+      id: 2,
+      userAvatar: "/boy1.jpeg",
+      smallAvatar: "/chat.png",
+      Sbackground: "green",
+      message: "John liked your post",
+      time: "5 minutes ago!",
+    },
+    {
+      id: 3,
+      userAvatar: "/girl2.jpg",
+      smallAvatar: "/like.png",
+      Sbackground: "blue",
+      message: "Alex commented on your photo",
+      time: "10 minutes ago!",
+    },
+    {
+      id: 4,
+      userAvatar: "/girl3.jpeg",
+      smallAvatar: "/chat.png",
+      Sbackground: "green",
+      message: "Sarah started following you",
+      time: "1 hour ago!",
+    },
+    {
+      id: 5,
+      userAvatar: "/girl5.jpeg",
+      smallAvatar: "/heartwhite.png",
+      Sbackground: "red",
+      Sbackgroud: "green",
+      message: "Michael shared your post",
+      time: "2 hours ago!",
+    },
+  ];
 
   return (
     <>
@@ -89,9 +146,102 @@ const Header = () => {
               <Button className="rounded-circle mr-3">
                 <MdOutlineEmail />
               </Button>
-              <Button className="rounded-circle mr-3">
-                <FaRegBell />
-              </Button>
+              <div className="notificationWrapper">
+                <Button
+                  className="rounded-circle mr-3"
+                  onClick={handleClickNotifications}
+                >
+                  <FaRegBell />
+                </Button>
+
+                <Menu
+                  anchorEl={isOpennotification}
+                  id="notifications"
+                  className="notifications dropdownList"
+                  open={openNotification}
+                  onClose={handleCloseNotifications}
+                  onClick={handleCloseNotifications}
+                  slotProps={{
+                    paper: {
+                      elevation: 0,
+                      sx: {
+                        overflow: "visible",
+                        filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+                        mt: 1.5,
+                        "& .MuiAvatar-root": {
+                          width: 32,
+                          height: 32,
+                          ml: -0.5,
+                          mr: 1,
+                        },
+                      },
+                    },
+                  }}
+                  transformOrigin={{ horizontal: "center", vertical: "top" }}
+                  anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+                >
+                  <div className="head pl-3 pb-1  pt-2">
+                    <h4>Notifications (34)</h4>
+                  </div>
+
+                  <Divider />
+                  <div className="scroll">
+                    {notifications.map((notification) => (
+                      <MenuItem
+                        key={notification.id}
+                        className="notification-menuitem"
+                        sx={{ fontSize: "14px" }}
+                        onClick={handleCloseNotifications}
+                      >
+                        <div className="notificationAvatar d-flex ">
+                          <div className="userImg mt-3 ">
+                            <Badge
+                              overlap="circular"
+                              anchorOrigin={{
+                                vertical: "bottom",
+                                horizontal: "left",
+                              }}
+                              badgeContent={
+                                <SmallAvatar
+                                  style={{
+                                    width: "20px",
+                                    height: "20px",
+                                    color: "white",
+                                    backgroundColor: notification.Sbackground,
+                                  }}
+                                  alt="Remy Sharp"
+                                  src={notification.smallAvatar}
+                                />
+                              }
+                            >
+                              <Avatar
+                                src={notification.userAvatar}
+                                style={{
+                                  width: "43px",
+                                  height: "43px",
+                                }}
+                              />
+                            </Badge>
+                          </div>
+
+                          <div className="dropdownInfo">
+                            <h4>
+                              <span>
+                                <b>Dulmi</b> {notification.message}{" "}
+                                <b>Nirasha Madubashini</b>{" "}
+                              </span>
+                            </h4>
+
+                            <p className="text-sky mb-0 mt-0">
+                              {notification.time}
+                            </p>
+                          </div>
+                        </div>
+                      </MenuItem>
+                    ))}
+                  </div>
+                </Menu>
+              </div>
 
               <div
                 className="myAcc d-flex align-items-center"
@@ -134,18 +284,6 @@ const Header = () => {
                         height: 32,
                         ml: -0.5,
                         mr: 1,
-                      },
-                      "&::before": {
-                        content: '""',
-                        display: "block",
-                        position: "absolute",
-                        top: 0,
-                        right: 14,
-                        width: 10,
-                        height: 10,
-                        bgcolor: "background.paper",
-                        transform: "translateY(-50%) rotate(45deg)",
-                        zIndex: 0,
                       },
                     },
                   },
