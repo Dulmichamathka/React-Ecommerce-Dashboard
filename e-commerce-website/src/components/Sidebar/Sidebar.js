@@ -11,6 +11,7 @@ import { IoDocumentText } from "react-icons/io5";
 import { MdEditDocument } from "react-icons/md";
 import { IoShapesSharp } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { IoMdLogOut } from "react-icons/io";
 
 const Sidebar = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -44,7 +45,9 @@ const Sidebar = () => {
 
           <li>
             <Button
-              className={`w-100 ${activeTab === 1 ? "active" : ""}`}
+              className={`w-100 ${
+                activeTab === 1 && isToggleSubmenu === true ? "active" : ""
+              }`}
               onClick={() => isOpenSubmenu(1)}
             >
               <span className="icon">
@@ -190,7 +193,16 @@ const Sidebar = () => {
 
         <br />
 
-        <div className="logoutWrapper"></div>
+        <div className="logoutWrapper">
+          <div className="logoutBox">
+            <Button variant="contained">
+              <span>
+                <IoMdLogOut />
+              </span>
+              Logout{" "}
+            </Button>
+          </div>
+        </div>
       </div>
     </>
   );

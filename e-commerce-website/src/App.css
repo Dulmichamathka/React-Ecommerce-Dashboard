@@ -7,7 +7,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #bfbfbf;
+  background: #dfdede;
 }
 
 header {
@@ -198,7 +198,7 @@ header button.rounded-circle:hover svg {
 
 .main .sidebarWrapper .sidebar {
   width: 20%;
-  height: 100vh;
+  height: calc(100vh - 70px);
   position: fixed;
   top: 70px;
   left: 0px;
@@ -231,7 +231,7 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper .sidebar ul li button {
-  color: #5e5d72 !important;
+  color: #5e5d72;
   text-align: left;
   justify-content: left;
   border-radius: 0px !important;
@@ -252,12 +252,8 @@ header button.rounded-circle:hover svg {
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon svg {
-  color: #000;
+  color: #5e5d72;
   font-size: 22px !important;
-}
-
-.main .sidebarWrapper .sidebar ul li button * {
-  color: #5e5d72 !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button .arrow {
@@ -267,6 +263,7 @@ header button.rounded-circle:hover svg {
   justify-content: center;
   width: 25px;
   height: 25px;
+  transition: all 0.3s ease-in-out;
 }
 
 .main .sidebarWrapper .sidebar ul li button:hover {
@@ -277,14 +274,218 @@ header button.rounded-circle:hover svg {
   background: #f1f1f1;
 }
 
-.logoutWrapper {
+.main .sidebarWrapper .sidebar ul li button.active .arrow {
+  transform: rotate(90deg);
+}
+
+.main .sidebarWrapper .sidebar ul li button.active .icon svg {
+  color: #1c7877 !important;
+  opacity: 1 !important;
+}
+/*  sidebar product submenu*/
+
+.main .sidebarWrapper .sidebar ul .submenu {
+  padding: 0px 45px;
+  position: relative;
+  transition: all 0.3s;
+  height: 0px;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu::before {
+  content: "";
+  width: 1px;
+  height: 95%;
+  position: absolute;
+  top: 0px;
+  left: 25px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li {
   width: 100%;
-  height: 100px;
+  list-style: none;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li a {
+  color: #5e5d72 !important;
+  text-decoration: none;
+  display: block;
+  padding: 6px 0px;
+  font-size: 14px !important;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #55b1af !important;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper {
+  transition: all 0.4s;
+  height: 0px;
+  overflow: hidden;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapsed .submenu {
+  opacity: 0;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse {
+  height: auto;
+}
+
+.main .sidebarWrapper .sidebar ul .submenuWrapper.colapse .submenu {
+  opacity: 1;
+  height: auto;
+  overflow: inherit;
+}
+
+.logoutWrapper {
+  padding: 0px 25px;
+}
+
+.logoutWrapper .logoutBox {
+  width: 100%;
+  height: 150px;
   padding: 25px;
-  background: #1c7877;
-  border-radius: 10x;
-  margin-bottom: 20px;
+  background: #bcd2fd;
+  border-radius: 10px;
+  margin-bottom: 10px !important;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden !important;
+}
+
+.logoutWrapper .logoutBox::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  background-color: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  opacity: 0.5;
+}
+.logoutWrapper .logoutBox::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  background-color: #0858f7;
+  border-radius: 100%;
+  position: absolute;
+  top: 20px;
+  left: 10px;
+  opacity: 0.5;
+}
+
+.logoutWrapper .logoutBox button {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+
+.logoutWrapper .logoutBox button svg {
+  margin-right: 5px;
+  font-size: 18px !important;
+}
+
+/* Right content*/
+
+.main .content {
+  width: 80%;
+  flex: 0 0 80%;
+}
+
+.right-content {
+  padding: 90px 30px;
+}
+
+.dashboardBoxWrapper {
+  gap: 20px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.dashboardBoxWrapper .dashboardBox {
+  width: 48%;
+  height: 170px;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left !important;
+  position: relative;
+}
+
+.dashboardBoxWrapper .dashboardBox .chart {
+  font-size: 130px;
+  color: #1e1e1e;
+  opacity: 0.1;
+  position: absolute;
+  bottom: 5px;
+  left: 30px;
+}
+
+.dashboardBoxWrapper .dashboardBox .bottomEle {
+  position: relative;
+  top: 15px;
+}
+
+.dashboardBoxWrapperRow .box {
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+}
+
+.dashboardBoxWrapper .dashboardBox .toggleIcon {
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  min-width: 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+}
+
+.dashboardBoxWrapper .dashboardBox .col1 h4 {
+  font-size: 16px;
+  font-weight: 5 00;
+}
+
+.dashboardBoxWrapper .dashboardBox .col1 span {
+  font-size: 35px !important;
+  font-weight: bold;
+  line-height: 45px;
+}
+
+.dashboardBoxWrapper .dashboardBox .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(103, 103, 103, 0),
+    rgba(0, 0, 0, 0.2)
+  );
+}
+
+.dashboardBoxWrapper .dashboardBox .icon svg {
+  font-size: 30px;
+  opacity: 0.6;
+  color: #ffffff;
+}
+
+/* Graph Box  */
+
+.graphBox {
+  background-image: linear-gradient(#1a50b5, #2a6ff7);
+  border-radius: 10px;
+  padding: 25px;
 }
