@@ -9,14 +9,11 @@ import MenuItem from "@mui/material/MenuItem";
 import { IoMdTime } from "react-icons/io";
 import Button from "@mui/material/Button";
 import { Chart } from "react-google-charts";
+import Pagination from "@mui/material/Pagination";
 
 import { PiDotsThreeOutlineVerticalFill } from "react-icons/pi";
-
-import InputLabel from "@mui/material/InputLabel";
-
-import FormHelperText from "@mui/material/FormHelperText";
 import FormControl from "@mui/material/FormControl";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 
 import { FaEye } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
@@ -282,8 +279,322 @@ const Dashboard = () => {
                     </div>
                   </td>
                 </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>#1</td>
+                  <td>
+                    <div className="d-flex align-items-center productBox">
+                      <div className="imgWrapper">
+                        <div className="img">
+                          <img src="/skirt.jpg" alt="" />
+                        </div>
+                      </div>
+                      <div className="info ">
+                        <h6>Tops and skirt set for Female...</h6>
+                        <p>
+                          women's exclusive summer Tops and skirt set for Female
+                          Tops and skirt set
+                        </p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>Womans</td>
+                  <td>richman</td>
+                  <td>
+                    <del className="old">$21.00</del>
+                    <span className="new text-danger">$19.00</span>
+                  </td>
+                  <td>30</td>
+                  <td>4.6(16)</td>
+                  <td>380</td>
+                  <td>$38k</td>
+                  <td>
+                    <div className="actions d-flex align-items-center">
+                      <Button className="secondary" color="secondary">
+                        <FaEye />
+                      </Button>
+                      <Button className="success" color="success">
+                        <FaPencil />
+                      </Button>
+                      <Button className="error" color="error">
+                        <ImBin />
+                      </Button>
+                    </div>
+                  </td>
+                </tr>
               </tbody>
             </table>
+
+            <div className="tableFooter d-flex ">
+              <p>
+                Showing <b>12</b> of <b>60</b> results
+              </p>
+              <Pagination
+                count={10}
+                color="primary"
+                className="pagination"
+                showFirstButton
+                showLastButton
+              />
+            </div>
           </div>
         </div>
       </div>

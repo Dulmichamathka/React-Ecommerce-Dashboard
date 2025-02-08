@@ -8,16 +8,19 @@
 body {
   font-family: "Open Sans", sans-serif;
   background: #dfdede;
+  overflow-x: hidden;
 }
 
 header {
   width: 100%;
   height: 70px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.7);
   position: fixed;
   top: 0px;
   left: 0px;
   z-index: 1000;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 header .row {
@@ -33,6 +36,10 @@ header .logo span {
   color: #1c7877;
   font-family: "Playwrite IN", serif;
   font-weight: 600;
+}
+
+header .part2 {
+  padding-left: 45px !important;
 }
 
 header button.rounded-circle {
@@ -188,12 +195,31 @@ header button.rounded-circle:hover svg {
   text-transform: capitalize !important;
 }
 
+.btn-lg {
+  padding: 7px 35px !important;
+}
+
+.btn-round {
+  border-radius: 30px !important;
+}
+
+.full {
+  max-width: 100% !important;
+  flex: 0 0 100% !important;
+  width: 100% !important;
+}
+
 /*----sidebar css styles-----*/
 
 .main .sidebarWrapper {
   width: 20%;
   flex: 0 0 20%;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
+}
+
+.main .sidebarWrapper.toggle {
+  width: 0%;
+  flex: 0 0 0%;
 }
 
 .main .sidebarWrapper .sidebar {
@@ -207,8 +233,14 @@ header button.rounded-circle:hover svg {
   overflow-y: scroll;
   overflow-x: hidden;
   padding-bottom: 40px;
+  transition: all 0.3s;
+  /* adding the trasition when the width size reducing */
 }
 
+.main .sidebarWrapper.toggle .sidebar {
+  left: -100%;
+}
+/* sixth reduce reserved width size also with removing sidebar width*/
 .main .sidebarWrapper .sidebar::-webkit-scrollbar {
   width: 3px !important;
   height: 10px !important;
@@ -396,8 +428,15 @@ header button.rounded-circle:hover svg {
 .main .content {
   width: 80%;
   flex: 0 0 80%;
+  transition: all 0.3s;
 }
 
+.main .content.toggle {
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+/* add toggle class for both sidebarwrapper and  content*/
 .right-content {
   padding: 90px 30px;
 }
@@ -424,7 +463,7 @@ header button.rounded-circle:hover svg {
 .dashboardBoxWrapper .dashboardBox .chart {
   font-size: 130px;
   color: #1e1e1e;
-  opacity: 0.1;
+  opacity: 0.05;
   position: absolute;
   bottom: 5px;
   left: 30px;
@@ -582,7 +621,7 @@ table td .info h6 {
   white-space: nowrap;
   font-size: 14px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 table td .info p {
@@ -616,4 +655,100 @@ table td .imgWrapper img {
 table td .info {
   width: 75%;
   flex: 0 0 75%;
+}
+
+/* table footer */
+
+.tableFooter {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.tableFooter .pagination {
+  margin-left: auto;
+}
+
+.tableFooter p {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+.table-responssive::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+}
+
+/*---Login Section---*/
+
+.loginSection {
+  width: 100%;
+  height: 100vh;
+  padding: 35px 25px;
+  background: url(/public/background.jpg) repeat-x top center;
+  position: relative;
+  z-index: 100;
+}
+
+.loginpatern {
+  width: 100% !important;
+  height: 100% !important;
+  position: fixed;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.loginSection .loginBox {
+  width: 400px;
+  height: auto;
+
+  margin: auto;
+}
+
+.loginSection .loginBox .wrapper {
+  width: 100%;
+  height: 300px;
+  background: #e6e6e6;
+  padding: 35px 45px;
+}
+
+.loginSection .loginBox .wrapper .form-control {
+  background: #fff !important;
+  box-shadow: none !important;
+  outline: none !important ;
+  border-radius: 8px !important;
+  font-size: 14px;
+  font-weight: 600;
+  height: 45px;
+  padding-left: 40px;
+}
+
+.loginSection .loginBox .wrapper .form-group.focus .icon svg {
+  color: #0858f7 !important;
+}
+
+.loginSection .loginBox .wrapper .form-control:focus {
+  border: 1px solid #0858f7 !important;
+}
+
+.loginSection .loginBox .wrapper .form-group .icon {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+  z-index: 100;
+  font-size: 23px;
+}
+
+.loginSection .loginBox .wrapper .form-group .icon svg {
+  color: #5e5d72;
+}
+
+.toggleShowPassword {
+  position: absolute;
+  top: 10px;
+  right: 8px;
+  cursor: pointer;
+}
+
+.toggleShowPassword svg {
+  font-size: 22px;
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import SearchBox from "../SearchBox";
 import Button from "@mui/material/Button";
@@ -22,6 +22,7 @@ import { IoShieldCheckmarkSharp } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { styled } from "@mui/material";
+import { MyContext } from "../../App";
 
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 10,
@@ -52,6 +53,11 @@ const Header = () => {
     setIsOpennotification(false);
   };
 
+  const [isLogin, setIsLogin] = useState(true);
+  //login logout
+
+  const context = useContext(MyContext);
+  //usecontext as context
   const notifications = [
     {
       id: 1,
@@ -116,8 +122,18 @@ const Header = () => {
             </div>
 
             <div className="col-sm-3 d-flex align-items-center part2 pl-4">
-              <Button className="rounded-circle mr-3">
-                <MdMenuOpen />
+              {/* use share data and methods here*/}
+              <Button
+                onClick={() =>
+                  context.setIsToggleSidebar(!context.isToggleSidebar)
+                }
+                className="rounded-circle mr-3"
+              >
+                {context.isToggleSidebar === false ? (
+                  <MdMenuOpen />
+                ) : (
+                  <MdOutlineMenu />
+                )}
               </Button>
               <SearchBox />
             </div>
@@ -248,28 +264,35 @@ const Header = () => {
                 </Menu>
               </div>
 
-              <div
-                className="myAcc d-flex align-items-center"
-                onClick={handleClick}
-              >
-                <div className="userImg">
-                  <Avatar
-                    src="/profile.jpg"
-                    sx={{
-                      width: 34,
-                      height: 34,
-                      position: "relative",
-                      bottom: "0.5px",
-                      right: "0.5px",
-                    }}
-                  />
-                </div>
+              {context.isLogin === true ? (
+                <Link to={"/login"}>
+                  {" "}
+                  <Button className="btn-blue btn-lg btn-round">Sign In</Button>
+                </Link>
+              ) : (
+                <div
+                  className="myAcc d-flex align-items-center"
+                  onClick={handleClick}
+                >
+                  <div className="userImg">
+                    <Avatar
+                      src="/profile.jpg"
+                      sx={{
+                        width: 34,
+                        height: 34,
+                        position: "relative",
+                        bottom: "0.5px",
+                        right: "0.5px",
+                      }}
+                    />
+                  </div>
 
-                <div className="userInfo">
-                  <h4>Dulmi Chamathka</h4>
-                  <p className="mb-0">dulmi@gmail.com</p>
+                  <div className="userInfo">
+                    <h4>Dulmi Chamathka</h4>
+                    <p className="mb-0">dulmi@gmail.com</p>
+                  </div>
                 </div>
-              </div>
+              )}
 
               <Menu
                 anchorEl={anchorEl}
