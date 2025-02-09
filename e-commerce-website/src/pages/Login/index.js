@@ -4,6 +4,8 @@ import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye } from "react-icons/io5";
 import { IoEyeOff } from "react-icons/io5";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [inputIndex, setInputIndex] = useState(null);
@@ -32,7 +34,7 @@ const Login = () => {
           <div className="wrapper mt-3 border card ">
             <form>
               <div
-                className={`form-group mb-3 position-relative ${
+                className={`form-group  position-relative ${
                   inputIndex === 0 && "focus"
                   //When inputIndex matches the input's index, the class "focus" is added.
                 }`}
@@ -51,7 +53,7 @@ const Login = () => {
               </div>
 
               <div
-                className={`form-group mb-3 position-relative ${
+                className={`form-group  position-relative ${
                   inputIndex === 1 && "focus"
                 }`}
               >
@@ -76,8 +78,40 @@ const Login = () => {
                 </span>
               </div>
 
-              <div className="form-group"></div>
+              <div className="form-group">
+                <Button className="btn-blue btn-lg btn-big w-100">
+                  Sign In
+                </Button>
+              </div>
+
+              <div className="form-group text-center mb-0">
+                <Link to={"/forgot-password"} className="link ">
+                  FORGOT PASSWORD
+                </Link>
+                <div className="d-flex align-items-center justify-content-center or mt-3 mb-3">
+                  <span className="line"></span>
+                  <span className="txt">or</span>
+                  <span className="line"></span>
+                </div>
+
+                <Button
+                  variant="outlined"
+                  className="w-100 btn-lg btn-big loginWithGoogle"
+                >
+                  <img src="/google.png" width="25px" />
+                  &nbsp; Sign In with Google
+                </Button>
+              </div>
             </form>
+          </div>
+
+          <div className="wrapper mt-3 border card footer p-3 ">
+            <span className="text-center">
+              Don't have an account?
+              <Link to={"/signUp"} className="link color ml-2">
+                Register
+              </Link>
+            </span>
           </div>
         </div>
       </section>
