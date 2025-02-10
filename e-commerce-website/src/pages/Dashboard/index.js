@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DashboardBox from "./Components/dashboardBox";
 import { FaUserCircle } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -18,6 +18,7 @@ import Select from "@mui/material/Select";
 import { FaEye } from "react-icons/fa";
 import { FaPencil } from "react-icons/fa6";
 import { ImBin } from "react-icons/im";
+import { MyContext } from "../../App";
 
 export const data = [
   ["Year", "Sales", "Expenses"],
@@ -59,6 +60,12 @@ const Dashboard = () => {
     setAnchorEl(null);
   };
   const ITEM_HEIGHT = 48;
+
+  const context = useContext(MyContext);
+
+  useEffect(() => {
+    context.setIsHideSidebarAndHeader(false);
+  }, []);
 
   return (
     <>

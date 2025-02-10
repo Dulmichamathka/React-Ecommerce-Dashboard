@@ -11,6 +11,7 @@ import { FaUserCircle } from "react-icons/fa";
 import { IoShieldCheckmark } from "react-icons/io5";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
+import { TiHome } from "react-icons/ti";
 
 const SignUp = () => {
   const [inputIndex, setInputIndex] = useState(null);
@@ -32,16 +33,22 @@ const SignUp = () => {
       <img src="/background.jpg" className="loginpatern" />
       <section className="loginSection signUpSection">
         <div className="row">
-          <div className="col-md-8 d-flex align-items-center justify-content-center flex-column part1">
+          <div className="col-md-8 d-flex justify-content-center flex-column part1">
             <h1>BEST UX/UI FASHION ECOMMERCE DASHBOARD & ADMIN PANEL</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
               ipsum dicta laborum doloribus aperiam a fugit assumenda dolorum
               esse molestiae. Ducimus eos qui corporis odio repellendus aut vel
-              sequi earum. Lorem ipsum dolor sit amet consectetur, adipisicing
-              elit. Eum repudiandae, qui magnam in recusandae explicabo beatae
-              deserunt.
+              sequi earum.
             </p>
+            <div className="mt-4">
+              <Link to={"/"}>
+                <Button className="btn-blue btn-lg btn-big ">
+                  <TiHome />
+                  Go To Home
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="col-md-4 pr-0">
