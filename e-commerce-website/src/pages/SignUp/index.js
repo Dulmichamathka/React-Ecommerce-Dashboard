@@ -22,6 +22,7 @@ const SignUp = () => {
 
   useEffect(() => {
     context.setIsHideSidebarAndHeader(true);
+    window.scrollTo(0, 0);
   }, []);
 
   const focusInput = (index) => {
@@ -34,7 +35,11 @@ const SignUp = () => {
       <section className="loginSection signUpSection">
         <div className="row">
           <div className="col-md-8 d-flex justify-content-center flex-column part1">
-            <h1>BEST UX/UI FASHION ECOMMERCE DASHBOARD & ADMIN PANEL</h1>
+            <h1>
+              BEST UX/UI FASHION{" "}
+              <span className="text-sky bold-text ">ECOMMERCE DASHBOARD</span> &
+              ADMIN PANEL
+            </h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum
               ipsum dicta laborum doloribus aperiam a fugit assumenda dolorum

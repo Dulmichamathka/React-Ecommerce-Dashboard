@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+body.dark {
+  background: #071739 !important;
+}
+
 h1,
 h2,
 h3,
@@ -32,6 +36,11 @@ header {
   backdrop-filter: blur(5px);
 }
 
+/*dark*/
+body.dark header {
+  background: #112143;
+}
+
 header .row {
   margin: 0px !important;
 }
@@ -47,6 +56,12 @@ header .logo span {
   font-weight: 600;
 }
 
+/*dark*/
+body.dark header .logo span {
+  color: #fff;
+  opacity: 0.8;
+}
+
 header .part2 {
   padding-left: 45px !important;
 }
@@ -56,6 +71,15 @@ header button.rounded-circle {
   height: 40px !important;
   background: #f0f5ff !important;
   color: #292929;
+}
+
+/*dark*/
+body.dark header button.rounded-circle {
+  background: #1a2f5d !important ;
+}
+
+body.dark header button.rounded-circle svg {
+  color: #fff !important;
 }
 
 header button.rounded-circle svg {
@@ -75,6 +99,10 @@ header button.rounded-circle:hover svg {
   border-radius: 6px;
 }
 
+body.dark .searchbox {
+  background: #1a2f5d !important ;
+}
+
 .searchbox input {
   background: transparent;
   border: 0px;
@@ -82,6 +110,12 @@ header button.rounded-circle:hover svg {
   padding-left: 9px;
   font-size: 14px;
   color: #292929;
+}
+
+body.dark .searchbox input,
+body.dark .searchbox input::-webkit-input-placeholder,
+body.dark .searchbox svg {
+  color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .searchbox input::-webkit-input-placeholder {
@@ -112,6 +146,19 @@ header button.rounded-circle:hover svg {
 
 .myAcc .userInfo {
   padding-left: 10px;
+}
+
+body.dark .myAcc .userInfo * {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .MuiPaper-elevation {
+  background-color: #12254e !important ;
+}
+
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .myAcc .userInfo h4 {
@@ -145,6 +192,14 @@ header button.rounded-circle:hover svg {
 .dropdownList h4 {
   font-size: 17px;
   font-weight: 600;
+}
+
+body.dark .dropdownList h4 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+body.dark .dropdownList li.MuiButtonBase-root {
+  background: #12254e !important;
 }
 
 .dropdownList li.MuiButtonBase-root {
@@ -258,6 +313,11 @@ header button.rounded-circle:hover svg {
   flex: 0 0 0%;
 }
 
+/*dark*/
+body.dark .main .sidebarWrapper .sidebar {
+  background: #112143 !important;
+}
+
 .main .sidebarWrapper .sidebar {
   width: 20%;
   height: calc(100vh - 70px);
@@ -298,6 +358,14 @@ header button.rounded-circle:hover svg {
   list-style: none;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul li button {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button .icon svg {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .main .sidebarWrapper .sidebar ul li button {
   color: #5e5d72;
   text-align: left;
@@ -307,6 +375,7 @@ header button.rounded-circle:hover svg {
   text-transform: capitalize !important;
   font-weight: 600;
   font-size: 15px !important;
+  border-radius: 10px !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button .icon {
@@ -338,6 +407,14 @@ header button.rounded-circle:hover svg {
   background: #f1f1f1 !important;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul li button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button.active {
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
 .main .sidebarWrapper .sidebar ul li button.active {
   background: #f1f1f1;
 }
@@ -357,6 +434,10 @@ header button.rounded-circle:hover svg {
   position: relative;
   transition: all 0.3s;
   height: 0px;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before {
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .main .sidebarWrapper .sidebar ul .submenu::before {
@@ -384,7 +465,15 @@ header button.rounded-circle:hover svg {
   transition: all 0.3s;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
 .main .sidebarWrapper .sidebar ul .submenu li a:hover {
+  color: #55b1af !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover {
   color: #55b1af !important;
 }
 
@@ -424,6 +513,11 @@ header button.rounded-circle:hover svg {
   justify-content: center;
   position: relative;
   overflow: hidden !important;
+}
+
+body.dark .logoutWrapper .logoutBox {
+  background-image: linear-gradient(#183e8c, #163474) !important;
+  background: transparent;
 }
 
 .logoutWrapper .logoutBox::before {
@@ -591,6 +685,20 @@ header button.rounded-circle:hover svg {
   color: #403e57;
 }
 
+body.dark .card {
+  background: #112143 !important;
+}
+
+body.dark .card .hd {
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+body.dark .cardFilters .col-md-3 h4 {
+  color: rgba(255, 255, 255, 0.8);
+}
+
 .cardFilters .col-md-3 h4 {
   font-size: 14px;
   font-weight: 800;
@@ -609,12 +717,27 @@ h6 {
   color: #403e57;
 }
 
-.table .thead-dark th {
+body.dark .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+body.dark .table .thead-dark th {
   background: #1c7877;
   border: 1px solid #1e8281;
   font-size: 13px;
 }
 
+body.dark .css-1ll44ll-MuiOutlinedInput-notchedOutline {
+  border-color: rgba;
+}
 .table tbody td {
   font-size: 14px !important;
   color: #403e57;
@@ -850,6 +973,10 @@ table td .info {
 .signUpSection .part1 h1 {
   font-size: 50px;
   font-weight: 800;
+}
+
+.signUpSection .part1 .bold-text {
+  font-weight: 800 !important;
 }
 
 .signUpSection .part1 p {

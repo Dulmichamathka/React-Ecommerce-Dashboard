@@ -139,7 +139,10 @@ const Header = () => {
             </div>
 
             <div className="col-sm-7 d-flex align-items-center justify-content-end ">
-              <Button className="rounded-circle mr-3">
+              <Button
+                className="rounded-circle mr-3"
+                onClick={() => context.setThemeMode(!context.themeMode)}
+              >
                 <MdOutlineLightMode />
               </Button>
               <Badge
